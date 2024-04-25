@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <nav>
-      <div class="text">
-        <h1>Free Image Search App</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="text">
+          <h1>Free Image Search App</h1>
+        </div>
+        <div class="searchBar">
+          <input type="text" placeholder="Search Image" id="searchInput" />
+          <button type="button" id="searchBtn">Search</button>
+        </div>
+      </nav>
+      <div class="showData"></div>
+      <div class="loadMore">
+        <button type="button" id="moreBtn">More Images</button>
       </div>
-      <div class="searchBar">
-        <input type="text" placeholder="Search Image" id="searchInput" />
-        <button type="button" id="searchBtn">Search</button>
+
+      <div class="showingImage">
+        <div id="donloadImageDiv">
+          <img src="" alt="" id="showingImageInBig" />
+        </div>
+
+        <button type="button" id="downloadImage">Download</button>
+        <button type="button" id="close">X</button>
       </div>
-    </nav>
-    <div class="showData">
-    </div>
-    <div class="loadMore">
-      <button type="button" id="moreBtn">More Images</button>
     </div>
 
-    <div class="showingImage">
-      <img src="" alt="" id="showingImageInBig">
-
-      <button type="button" id="downloadImage">Download</button>
-      <button type="button" id="close">X</button>
-    </div>
-
-  </div>
-  <script type="module" src="script.js"></script>
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>

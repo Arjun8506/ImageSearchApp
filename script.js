@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const getData = async (searchValue, pageNo) => {
         let fetching = await fetch(`https://api.unsplash.com/search/photos?query=${searchValue}&per_Page=28&page=${pageNo}&client_id=${Acces_Key}`);
         let jsonData = await fetching.json();
-        console.log(jsonData.results);
 
         for (let i = 0; i < jsonData.results.length; i++) {
             const newImg = document.createElement("img");
@@ -23,6 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("close").addEventListener("click", () => {
                     document.querySelector(".showingImage").style.display = "none"
                 })
+
+                document.getElementById("downloadImage").addEventListener("click", () => {
+                    domtoimage.toPng(document.getElementById('donloadImageDiv'))
+                        .then(function (dataUrl) {
+                            var link = document.createElement('a');
+                            link.href = dataUrl;
+                            link.download = 'UnasplashAPI.png';
+                            link.click();
+                        });
+
+                })
+
             })
         }
         moreBtn.style.display = "block"
